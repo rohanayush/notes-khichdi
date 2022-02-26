@@ -14,6 +14,7 @@ export class AppComponent {
   }
   showArticle(){
     this.article=true;
+    this.picture=false;
     this.txt=false;
   }
   ngOnInit(){
@@ -25,9 +26,16 @@ export class AppComponent {
   showText(){
     console.log(this.text,"inside function")
     this.txt=true;
+    this.picture=false;
     this.article=false;
 
     // this.text.nativeElement.hidden=false;
+  }
+  picture=false;
+  showPictureNotes(){
+    this.article=false;
+    this.txt=false;
+    this.picture=true;
   }
   }
 

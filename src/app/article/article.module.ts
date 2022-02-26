@@ -4,6 +4,8 @@ import { ArticleComponent } from './articles/article.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { ArticlesReducer } from './store/article.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -15,7 +17,8 @@ import { ArticlesReducer } from './store/article.reducer';
     CommonModule,FormsModule,
     StoreModule.forRoot({
       articles:ArticlesReducer
-     })
+     }),
+     StoreDevtoolsModule.instrument({ logOnly: environment.production})
   ],
   exports:[
     ArticleComponent

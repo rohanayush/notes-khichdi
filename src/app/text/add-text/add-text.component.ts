@@ -45,7 +45,13 @@ export class AddTextComponent implements OnInit {
       this.note.description='';
     }
   }
-  notes:Notes[]=[];
+  notes:Notes[]=[
+    {
+      id:uuid(),
+      description:"Its been amazing developing this application!"
+
+    }
+  ];
   ngOnInit(): void {
     // this.notesItems$= this.store.select(store=>store);
    

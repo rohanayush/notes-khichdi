@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleModule } from './article/article.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PictureModule } from './picture/picture.module';
 import { TextModule } from './text/text.module';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TextModule } from './text/text.module';
     BrowserModule,
     AppRoutingModule,
     TextModule,
-    ArticleModule
+    ArticleModule,
+  PictureModule
   ],
   providers: [],
   bootstrap: [AppComponent]

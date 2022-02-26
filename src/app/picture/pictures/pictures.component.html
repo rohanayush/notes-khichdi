@@ -1,0 +1,37 @@
+<div class="card-content animate__animated animate__fadeInDown">
+    <span class="card-title">Add Notes</span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+        <div class="row">
+
+            <div class="input-field col-md-6">
+                <label>Title</label>
+
+                <input type="text" placeholder="description" [(ngModel)]="pic.title" name="title">
+            </div>
+            <div class="input-field col-md-6">
+                <label>description</label>
+
+                <input type="text" placeholder="description" [(ngModel)]="pic.description" name="description">
+            </div>
+            <div class="input-field col-md-6">
+                <label>Picture</label>
+
+                <input type="file" placeholder="upload picture" accept='image/*' #file (change)="preview(file.files)" [(ngModel)]="pic.picture" name="picture">
+                <br><br><br><img [src]="imgURL" height="200" >
+            </div>
+            <input type="submit" value="Submit" class="btn">
+
+        </div>
+
+    </form>
+</div>
+
+<div class="content">
+   <ul *ngFor="let o of frame">
+       {{o.title}}
+       {{o.description}}
+    <img [src]="o.picture" height="200" >
+
+
+   </ul>
+</div>

@@ -13,8 +13,11 @@ const initiateState: Array<Articles> = [
 export function ArticlesReducer(state: Array<Articles> = initiateState, action: AddNoteAction) {
     switch (action.type) {
         case ArticlesActionTypes.ADD_ARTICLE:
+            console.log("in reducer add",...state,action.payload)
             return [...state, action.payload]
         case ArticlesActionTypes.REMOVE_ARTICLE:
+            console.log("in reducer remove ",...state,action.payload)
+
             return state.filter(ARTICLE=>ARTICLE.id1 != action.payload)
         default:
             return state
