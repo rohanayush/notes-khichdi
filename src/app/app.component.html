@@ -1,1 +1,6 @@
-<h1>Clean slate , Yes</h1>
+<app-navbar></app-navbar>
+<button (click)="showText()">Add text note</button>
+
+<div [ngStyle]="{'display': (txt?'':'none')}"  #textShow>
+<app-text ></app-text>
+</div>
