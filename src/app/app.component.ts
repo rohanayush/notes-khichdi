@@ -15,7 +15,8 @@ export class AppComponent {
   showArticle(){
     this.article=true;
     this.picture=false;
-    this.txt=false;
+  this.docs=false;
+  this.txt=false;
   }
   ngOnInit(){
     // this.text.nativeElement.hidden=true;
@@ -27,7 +28,8 @@ export class AppComponent {
     console.log(this.text,"inside function")
     this.txt=true;
     this.picture=false;
-    this.article=false;
+  this.docs=false;
+  this.article=false;
 
     // this.text.nativeElement.hidden=false;
   }
@@ -35,7 +37,15 @@ export class AppComponent {
   showPictureNotes(){
     this.article=false;
     this.txt=false;
-    this.picture=true;
+  this.docs=false;
+  this.picture=true;
+  }
+  docs=false;
+  showDocumentNotes(){
+    this.article=false;
+    this.picture=false;
+  this.docs=true;
+  this.txt=false;
   }
   }
 

@@ -1,0 +1,31 @@
+<div class="card-content animate__animated animate__fadeInDown">
+    <span class="card-title">Add Notes</span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+        <div class="row">
+            <div class="input-field col-md-6">
+                <label>Document Title</label>
+
+                <input type="text"  placeholder="Title"  [(ngModel)]="docs.title"   name="picture">
+              <!-- <label >Url instead</label>  <input type="text"  [(ngModel)]="pic.picture"  name="picture"> -->
+
+            </div>
+            
+            <div class="input-field col-md-6">
+                <label>Document upload</label>
+
+                <input type="file"  placeholder="upload picture" accept='*' #file (change)="preview(file.files)" [(ngModel)]="docs.document"   name="picture">
+              <!-- <label >Url instead</label>  <input type="text"  [(ngModel)]="pic.picture"  name="picture"> -->
+
+            </div>
+            <input type="submit" value="Submit" class="btn">
+
+        </div>
+
+    </form>
+</div>
+<div class="content">
+    <ul *ngFor="let o of doc_note">
+        <li>{{o.title}}</li>
+        <li>{{o.type}}</li>
+    </ul>
+</div>
