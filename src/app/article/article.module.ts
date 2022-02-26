@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArticleComponent } from './article/article.component';
+import { ArticleComponent } from './articles/article.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { ArticlesReducer } from './store/article.reducer';
@@ -14,7 +14,7 @@ import { ArticlesReducer } from './store/article.reducer';
   imports: [
     CommonModule,FormsModule,
     StoreModule.forRoot({
-      article:ArticlesReducer
+      articles:ArticlesReducer
      })
   ],
   exports:[

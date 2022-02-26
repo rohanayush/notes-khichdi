@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Notes } from '../model/Notes';
 import {v4 as uuid} from 'uuid';
-import { AddAction, RemoveAction } from '../store/notes.action';
 
 @Component({
   selector: 'app-add-text',
@@ -19,11 +18,14 @@ export class AddTextComponent implements OnInit {
   constructor(private store:Store<Array<Notes>>) { }
 
   
-  notesItems$:Observable<Array<Notes>>;
+  // notesItems$:Observable<Array<Notes>>;
   d=[]
-  delete(a){
+  delete( a){
     console.log("delete",a)
-    this.store.dispatch(new RemoveAction(a));
+    this.notes=this.notes.filter(
+      note=> note.id != a
+    )
+    console.log(this.notes,"after filter")
   }
   onSubmit(){
     if(this.note.description != '' ){
@@ -37,25 +39,16 @@ export class AddTextComponent implements OnInit {
       id:uuid(),
       description:this.note.description
     }
+    this.notes.push(a);
 
-    this.store.dispatch(new AddAction(a))
      
       this.note.description='';
     }
   }
-  notes:any;
+  notes:Notes[]=[];
   ngOnInit(): void {
-    this.notesItems$= this.store.select(store=>store);
-    console.log("data",this.notesItems$)
-    this.notesItems$.subscribe(
-      (d)=>{
-        console.log("data",d)
-        this.notes=d["notes"];
-      }
-    )
-    setTimeout(() => {
-      
-    }, 2000);
+    // this.notesItems$= this.store.select(store=>store);
+   
   }
 
 }
