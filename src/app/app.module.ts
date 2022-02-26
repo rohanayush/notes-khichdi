@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArticleModule } from './article/article.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TextModule } from './text/text.module';
 
@@ -14,7 +15,8 @@ import { TextModule } from './text/text.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TextModule
+    TextModule,
+    ArticleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

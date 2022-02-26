@@ -1,6 +1,12 @@
 <app-navbar></app-navbar>
 <button (click)="showText()">Add text note</button>
+<button (click)="showArticle()">Add article</button>
+
 
 <div [ngStyle]="{'display': (txt?'':'none')}"  #textShow>
-<app-text ></app-text>
+<app-add-text></app-add-text>
 </div>
+
+<div [ngStyle]="{'display': (article?'':'none')}"  #textShow>
+  <app-article></app-article>
+  </div>

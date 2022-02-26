@@ -12,15 +12,21 @@ export class AppComponent {
     // this.text.nativeElement.hidden=true;
 
   }
-
+  showArticle(){
+    this.article=true;
+    this.txt=false;
+  }
   ngOnInit(){
     // this.text.nativeElement.hidden=true;
 
   }
   txt=false;
+  article=false;
   showText(){
     console.log(this.text,"inside function")
     this.txt=true;
+    this.article=false;
+
     // this.text.nativeElement.hidden=false;
   }
   }

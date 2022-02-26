@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddTextComponent } from './add-text/add-text.component';
+import { ArticleComponent } from './article/article.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { NotesReducer } from './store/notes.reducer';
+import { ArticlesReducer } from './store/article.reducer';
+
 
 
 @NgModule({
   declarations: [
-    
-    AddTextComponent
+    ArticleComponent
   ],
   imports: [
     CommonModule,FormsModule,
     StoreModule.forRoot({
-     notes:NotesReducer
-    })
+      article:ArticlesReducer
+     })
   ],
   exports:[
-     AddTextComponent
+    ArticleComponent
   ]
 })
-export class TextModule { }
+export class ArticleModule { }

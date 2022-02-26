@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Notes } from '../model/Notes';
-import {v4 as uuid} from 'uuid';
-import { AddAction, RemoveAction } from '../store/notes.action';
-
+import { Articles } from '../model/article';
+import { AddAction, RemoveAction } from '../store/article.action';
+import { v4 as uuid} from 'uuid';
 @Component({
-  selector: 'app-add-text',
-  templateUrl: './add-text.component.html',
-  styleUrls: ['./add-text.component.scss']
+  selector: 'app-article',
+  templateUrl: './article.component.html',
+  styleUrls: ['./article.component.scss']
 })
-export class AddTextComponent implements OnInit {
+export class ArticleComponent implements OnInit {
 
-  note:Notes={
+  note:Articles={
     id:'',
+    title:'',
     description:''
   };
-  constructor(private store:Store<Array<Notes>>) { }
+  constructor(private store:Store<Array<Articles>>) { }
 
   
-  notesItems$:Observable<Array<Notes>>;
+  notesItems$:Observable<Array<Articles>>;
   d=[]
   delete(a){
     console.log("delete",a)
     this.store.dispatch(new RemoveAction(a));
   }
   onSubmit(){
-    if(this.note.description != '' ){
+    if(this.note.description != '' && this.note.title != '' && this.note.title.length <100 ){
       // this.notesService.addNotes(this.note);
       var code=Math.random()
       while(this.d.includes(code)){
@@ -35,12 +35,15 @@ export class AddTextComponent implements OnInit {
       this.d.push(code);
     var a={
       id:uuid(),
+      title:this.note.title,
       description:this.note.description
     }
+    console.log("articles",a)
 
     this.store.dispatch(new AddAction(a))
      
       this.note.description='';
+      this.note.title=''
     }
   }
   notes:any;
@@ -49,13 +52,13 @@ export class AddTextComponent implements OnInit {
     console.log("data",this.notesItems$)
     this.notesItems$.subscribe(
       (d)=>{
-        console.log("data",d)
-        this.notes=d["notes"];
+        console.log("data in article",d)
+        this.notes=d["article"];
       }
     )
     setTimeout(() => {
       
     }, 2000);
   }
-
 }
+
