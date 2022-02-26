@@ -16,6 +16,6 @@
 </div>
 <div class="list">
     <ul *ngFor="let o of notes ;let i=index">
-        <li>{{o.description}}</li>
+        <li>{{o.description}}  <button (click)="delete(o.id)" class="btn-danger danger">Delete</button> </li>
     </ul>
 </div>

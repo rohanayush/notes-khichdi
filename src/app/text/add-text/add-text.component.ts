@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Notes } from '../model/Notes';
-import { AddAction } from '../store/notes.action';
+import { AddAction, RemoveAction } from '../store/notes.action';
 
 @Component({
   selector: 'app-add-text',
@@ -19,11 +19,21 @@ export class AddTextComponent implements OnInit {
 
   
   notesItems$:Observable<Array<Notes>>;
+  d=[]
+  delete(a){
+    console.log("delete",a)
+    this.store.dispatch(new RemoveAction(a));
+  }
   onSubmit(){
     if(this.note.description != '' ){
       // this.notesService.addNotes(this.note);
+      var code=Math.random()
+      while(this.d.includes(code)){
+           code=Math.random()
+      }
+      this.d.push(code);
     var a={
-      id:Math.random().toString(),
+      id:code.toString(),
       description:this.note.description
     }
 
