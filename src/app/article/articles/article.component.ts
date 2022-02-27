@@ -22,7 +22,7 @@ export class ArticleComponent implements OnInit {
   notesItems$:Observable<Array<Articles>>;
   d=[]
   delete(a){
-    console.log("delete",a)
+    //console.log("delete",a)
     this.store.dispatch(new RemoveArticle(a));
   }
   onSubmit(){
@@ -38,7 +38,7 @@ export class ArticleComponent implements OnInit {
       title:this.note.title,
       description:this.note.description
     }
-    console.log("articles",a)
+    //console.log("articles",a)
 
     this.store.dispatch(new AddArticle(a))
      
@@ -49,10 +49,10 @@ export class ArticleComponent implements OnInit {
   notes:any;
   ngOnInit(): void {
     this.notesItems$= this.store.select(store=>store);
-    console.log("data",this.notesItems$)
+    //console.log("data",this.notesItems$)
     this.notesItems$.subscribe(
       (d)=>{
-        console.log("data in article",d)
+        //console.log("data in article",d)
         this.notes=d["articles"];
       }
     )

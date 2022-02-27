@@ -33,7 +33,9 @@
      <li class="title">  {{o.title}}</li>
      <li style="border-left:5px solid teal;margin-left:5px">  {{o.description}}</li>
     <img style="border-radius: 11px;margin:3px" [src]="o.picture" height="200" >
-
+   <li> <button (click)="delete(o.id)"  class="btn btn-danger">
+        Delete
+    </button></li>
 
    </ul>
 </div>

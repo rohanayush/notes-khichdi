@@ -27,14 +27,14 @@ export class DocumentNotesComponent implements OnInit {
     window.open(this.download);
   }
   preview(files){
-    console.log(files)
+    ////console.log(files)
     if (files.length === 0)
       return;
  
     var mimeType = files[0].type;
     this.type=mimeType.toString();
     this.document=files[0].name;
-    console.log("mimeType",this.type);
+    ////console.log("mimeType",this.type);
     // if (mimeType.match(/image\/*/) == null) {
     //   this.message = "Only images are supported.";
     //   return;
@@ -48,7 +48,7 @@ export class DocumentNotesComponent implements OnInit {
     window.open(this.download)
     reader.onload = (_event) => { 
       this.imgURL = reader.result; 
-      console.log("url",this.imgURL)
+      ////console.log("url",this.imgURL)
       this.message=""
     }
   }

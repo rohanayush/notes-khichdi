@@ -21,11 +21,11 @@ export class AddTextComponent implements OnInit {
   // notesItems$:Observable<Array<Notes>>;
   d=[]
   delete( a){
-    console.log("delete",a)
+    //console.log("delete",a)
     this.notes=this.notes.filter(
       note=> note.id != a
     )
-    console.log(this.notes,"after filter")
+    //console.log(this.notes,"after filter")
   }
   onSubmit(){
     if(this.note.description != '' ){

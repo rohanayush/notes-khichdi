@@ -36,12 +36,12 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
     // this.aMarker = new Marker(document.getElementById('marker')).setOffset([0, 0]).setDraggable(true).setLngLat([-108.54491326556354,70.3919058347233]).addTo(this.map);
     var r=this.map.on('click',(e)=>{
       localStorage.setItem('coords',e.lngLat.wrap().toString())
-      console.log(e.lngLat.toString())
+      //console.log(e.lngLat.toString())
     document.getElementById('info').innerHTML ="Click View:" +  ' ' +JSON.stringify(e.lngLat.wrap());
 
       return e.lngLat.toString();
     })
-    console.log("r",r)
+    //console.log("r",r)
 
 
     // setTimeout(() => {
@@ -52,7 +52,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
     //     var a=[]
     //     a.push(Number(kk[0]))
     //     a.push(Number(kk[1]))
-    //     console.log("a",a)
+    //     //console.log("a",a)
     //     var aa= a as LngLatLike;
     //     this.aMarker = new Marker(document.getElementById('marker')).setOffset([0, 0]).setDraggable(true).setLngLat(aa).addTo(this.map);
   
@@ -74,7 +74,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
   
   
       var ee= value();
-      //console.log("ww",ee)
+      ////console.log("ww",ee)
       this.updateMap(ee);
 
       this.getZoom();
@@ -109,7 +109,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   updateMap(event: { target: Map }) {
     const { target } =  event;
-    console.log("bounds",target.getBounds(),"center",target.getCenter(),"zoom",target.getZoom());
+    //console.log("bounds",target.getBounds(),"center",target.getCenter(),"zoom",target.getZoom());
    
     
     this.inp.id=uuid()
@@ -124,7 +124,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
   map_notes=[]
   zoom_out(){
     var zoom=this.map.getZoom();
-    console.log("zoom",typeof(zoom))
+    //console.log("zoom",typeof(zoom))
     
     this.map.setZoom(zoom-1)
   }
@@ -137,14 +137,14 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
     
   }
   zoom_in(){
-    console.log("zoom")
+    //console.log("zoom")
     var zoom=this.map.getZoom();
 
     this.map.setZoom(zoom+1)
   }
   delete(id){
     this.map_notes= this.map_notes.filter(map=> map.id != id);
-    console.log("delete",id)
+    //console.log("delete",id)
   }
   onSubmit(){
       if(this.map1.title !='' && this.inp.center.toString().length>0 ){
@@ -158,7 +158,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
         var a=[]
         a.push(Number(kk[0]))
         a.push(Number(kk[1]))
-        console.log("a",a)
+        //console.log("a",a)
         var aa= a as LngLatLike;
         var a1={
           id:uuid(),
@@ -168,7 +168,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
         }
         this.map_notes.push(a1);
         setTimeout(() => {
-          console.log("map notes",this.map_notes)
+          //console.log("map notes",this.map_notes)
           
         }, 200);
         // this.aMarker = new Marker(document.getElementById('marker')).setOffset([0, 0]).setDraggable(true).setLngLat(aa).addTo(this.map);

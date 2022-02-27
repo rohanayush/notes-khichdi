@@ -27,7 +27,7 @@ export class AppComponent {
   txt=true;
   article=false;
   showText(){
-    console.log(this.text,"inside function")
+    //console.log(this.text,"inside function")
     this.txt=true;
     this.picture=false;
     this.maps=false;

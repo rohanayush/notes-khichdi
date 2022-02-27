@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pictures } from '../model/pictures';
-
+import {v4 as uuid} from 'uuid';
 @Component({
   selector: 'app-pictures',
   templateUrl: './pictures.component.html',
@@ -63,10 +63,15 @@ export class PicturesComponent implements OnInit {
 
     }
   }
+  delete(id){
+    this.frame= this.frame.filter(pic=>
+      pic.id != id)
+  }
   onSubmit() {
     if (this.pic.description != '' && this.pic.title != '' && this.pic.title.length < 100 && this.pic.picture != null) {
      
 this.pic.picture=this.imgURL;
+       this.pic.id=uuid();
        this.frame.push(this.pic);
        this.pic={id: '',
        title: '',
@@ -74,7 +79,7 @@ this.pic.picture=this.imgURL;
        description: ''}
        this.imgURL=''
        this.message=""
-      console.log("frame",this.frame)
+      //console.log("frame",this.frame)
 
 
     }
