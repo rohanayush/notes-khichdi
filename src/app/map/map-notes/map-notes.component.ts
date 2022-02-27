@@ -75,7 +75,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
       //console.log("ww",ee)
       this.updateMap(ee);
 
-   
+      this.getZoom();
 
   }
   setMap(o){
@@ -120,6 +120,30 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   map_notes=[]
+  zoom_out(){
+    var zoom=this.map.getZoom();
+    console.log("zoom",typeof(zoom))
+    
+    this.map.setZoom(zoom-1)
+  }
+  zz=3
+  getZoom(){
+   
+      this.zz=this.map.getZoom()
+    return this.zz
+   
+    
+  }
+  zoom_in(){
+    console.log("zoom")
+    var zoom=this.map.getZoom();
+
+    this.map.setZoom(zoom+1)
+  }
+  delete(id){
+    this.map_notes= this.map_notes.filter(map=> map.id != id);
+    console.log("delete",id)
+  }
   onSubmit(){
       if(this.map1.title !='' && this.inp.center.toString().length>0 ){
           // var a=this.map1;
@@ -138,7 +162,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
           id:uuid(),
           title:this.map1.title,
           center:aa,
-          zoom:this.map1.zoom
+          zoom:this.map.getZoom()
         }
         this.map_notes.push(a1);
         setTimeout(() => {

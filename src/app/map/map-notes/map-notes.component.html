@@ -1,6 +1,11 @@
 
 <!-- <div id="marker" >
 </div> -->
+<div class="sidebar" style="z-index:100000">
+    Please click on map anywhere to choose a coordinate
+ <button class="btn btn-info" (click)="zoom_out()">Zoom out Map</button><br>
+   <button class="btn btn-success" (click)="zoom_in()">Zoom in Map</button>
+</div>
 <form (ngSubmit)="onSubmit()" class="col s6">
     <div class="row">
         <div class="map-wrap">
@@ -12,19 +17,20 @@
                     
         </div>
         </div>
-        
-        <div class="input-field col-md-6">
+        <div style="margin-top:20px;padding:1rem;">
+        <div  class="input-field col-md-5">
            <label>Describe</label>
 
            <input type="text" placeholder="description" [(ngModel)]="map1.title" name="description">
        </div>
-       <div class="input-field col-md-6">
-        <label>Describe</label>
+       <!-- <div class="input-field col-md-3">
+        <label>Zoom number</label>
 
         <input type="number" placeholder="set zoom level" [(ngModel)]="map1.zoom" name="description">
-    </div>
+    </div> -->
        <input type="submit" value="Submit" class="btn">
  
+    </div>
     </div>
 
 </form>
@@ -40,6 +46,8 @@
         <li>
          Zoom Level:   {{o.zoom}}
         </li>
-        <button (click)="setMap(o)" class="btn btn-info">Set Map Accordingly</button>
+        <button (click)="setMap(o)" class="btn btn-info">See in Map Accordingly</button>
+        <button (click)="delete(o.id)" class="btn btn-danger">Delete</button>
+      
     </ul>
 </div>

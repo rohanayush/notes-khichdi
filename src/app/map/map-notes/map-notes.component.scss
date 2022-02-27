@@ -1,6 +1,6 @@
 .map-wrap {
     position: relative;
-    width: 60%;
+    width: 100%;
     // height: calc(100vh - 77px);
      /* calculate height of the screen minus the heading */
      height:400px;
@@ -79,12 +79,16 @@
           position:absolute;
       top:20%;
       max-height:70vh;
-      width:30%;
+      width:10%;
+      padding:0.3rem;
       background: white;
-      box-shadow: 1px 1px silver;
+    //   box-shadow: 1px 1px silver;
       overflow: auto;
-      border:3px solid silver;
+    //   border:3px solid silver;
     }
+   .btn{
+       margin:10px
+   }
     #marker {
        background-image: url('./../../../assets/mark.png');
       background-size: cover; 
