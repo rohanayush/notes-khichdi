@@ -1,0 +1,45 @@
+
+<!-- <div id="marker" >
+</div> -->
+<form (ngSubmit)="onSubmit()" class="col s6">
+    <div class="row">
+        <div class="map-wrap">
+            <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
+                    alt="MapTiler logo" /></a>
+        <div class="map" #map>
+            <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
+                    alt="MapTiler logo" /></a>
+                    
+        </div>
+        </div>
+        
+        <div class="input-field col-md-6">
+           <label>Describe</label>
+
+           <input type="text" placeholder="description" [(ngModel)]="map1.title" name="description">
+       </div>
+       <div class="input-field col-md-6">
+        <label>Describe</label>
+
+        <input type="number" placeholder="set zoom level" [(ngModel)]="map1.zoom" name="description">
+    </div>
+       <input type="submit" value="Submit" class="btn">
+ 
+    </div>
+
+</form>
+<!-- <button (click)="onSubmit()" class="btn btn-success">Add</button> -->
+<div class="content">
+    <ul  *ngFor="let o of map_notes">
+        <li>
+           Note: {{o.title}}
+        </li>
+        <li>
+         Centered at:   {{o.center}}
+        </li>
+        <li>
+         Zoom Level:   {{o.zoom}}
+        </li>
+        <button (click)="setMap(o)" class="btn btn-info">Set Map Accordingly</button>
+    </ul>
+</div>

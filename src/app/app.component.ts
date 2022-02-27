@@ -16,19 +16,23 @@ export class AppComponent {
     this.article=true;
     this.picture=false;
   this.docs=false;
-  this.txt=false;
+    this.maps=false;
+    this.txt=false;
   }
   ngOnInit(){
     // this.text.nativeElement.hidden=true;
 
   }
+  maps=false;
   txt=false;
   article=false;
   showText(){
     console.log(this.text,"inside function")
     this.txt=true;
     this.picture=false;
-  this.docs=false;
+    this.maps=false;
+    this.maps=false;
+    this.docs=false;
   this.article=false;
 
     // this.text.nativeElement.hidden=false;
@@ -36,6 +40,7 @@ export class AppComponent {
   picture=false;
   showPictureNotes(){
     this.article=false;
+    this.maps=false;
     this.txt=false;
   this.docs=false;
   this.picture=true;
@@ -45,7 +50,16 @@ export class AppComponent {
     this.article=false;
     this.picture=false;
   this.docs=true;
+    this.maps=false;
+    this.txt=false;
+  }
+  showMapNotes(){
+    this.maps=true;
+    this.article=false;
+    this.picture=false;
+  this.docs=false;
   this.txt=false;
+
   }
   }
 

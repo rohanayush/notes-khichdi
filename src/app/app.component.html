@@ -3,6 +3,7 @@
 <button (click)="showArticle()">Article note<sup class="sup">+</sup> </button>
 <button (click)="showPictureNotes()">Pictures note <sup class="sup">+</sup></button>
 <button (click)="showDocumentNotes()">Document note <sup class="sup">+</sup></button>
+<button (click)="showMapNotes()">Map note <sup class="sup">+</sup></button>
 
 
 
@@ -21,3 +22,6 @@
     <div [ngStyle]="{'display': (docs?'':'none')}"  >
       <app-document-notes></app-document-notes>
       </div>
+      <div [ngStyle]="{'display': (maps?'':'none')}"  >
+        <app-map-notes></app-map-notes>
+        </div>
