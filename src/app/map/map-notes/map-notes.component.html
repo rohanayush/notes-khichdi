@@ -2,12 +2,13 @@
 <!-- <div id="marker" >
 </div> -->
 <div class="sidebar" style="z-index:100000">
-    Please click on map anywhere to choose a coordinate and then give a description and submit.
-    ctrl+shift+mouse area drag also helps in zooming.
- <button class="btn btn-info" (click)="zoom_out()">Zoom out Map</button><br>
-   <button class="btn btn-success" (click)="zoom_in()">Zoom in Map</button>
+   <span style="height: 70px;overflow: auto;"> Please click on map anywhere to choose a coordinate and then give a description and submit.
+    ctrl+shift+mouse area drag also helps in zooming while on map.</span>
+ 
 </div>
 <form (ngSubmit)="onSubmit()" class="col s6">
+    <div style="position: absolute;top:40%;left:16%;z-index:99999"><button class="btn btn-info" (click)="zoom_out()">Zoom out Map</button><br>
+   <button class="btn btn-success" (click)="zoom_in()">Zoom in Map</button></div>
     <div class="row">
         <div class="map-wrap">
             <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
@@ -41,7 +42,7 @@
 <!-- <button (click)="onSubmit()" class="btn btn-success">Add</button> -->
 <div class="content row">
     <ul class="col-md-4 notepatch"  *ngFor="let o of map_notes">
-        <li>
+        <li class="title">
            Note: {{o.title}}
         </li>
         <li>

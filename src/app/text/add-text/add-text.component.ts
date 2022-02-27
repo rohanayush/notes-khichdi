@@ -48,7 +48,7 @@ export class AddTextComponent implements OnInit {
   notes:Notes[]=[
     {
       id:uuid(),
-      description:"Its been amazing developing this application!"
+      description:"It has been amazing developing this application!"
 
     }
   ];

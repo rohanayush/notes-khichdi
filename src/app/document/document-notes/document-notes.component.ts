@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Documents } from '../model/document';
+import {v4 as uuid} from 'uuid';
 
 @Component({
   selector: 'app-document-notes',
@@ -25,6 +26,9 @@ export class DocumentNotesComponent implements OnInit {
   public message: string;
   download_file(){
     window.open(this.download);
+  }
+  delete(id){
+    this.doc_note=this.doc_note.filter(docs=>docs.id != id)
   }
   preview(files){
     ////console.log(files)
@@ -55,6 +59,7 @@ export class DocumentNotesComponent implements OnInit {
   doc_note:Documents[]=[]
   onSubmit(){
    if(this.document.length >0 && this.docs.title !=''){
+     this.docs.id=uuid();
      this.docs.title=this.docs.title+"|"+ this.document;
      this.docs.type=this.type;
      this.docs.document=this.imgURL;
