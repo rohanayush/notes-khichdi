@@ -16,6 +16,9 @@
                     alt="MapTiler logo" /></a>
                     
         </div>
+        <div id="info">
+
+        </div>
         </div>
         <div style="margin-top:20px;padding:1rem;">
         <div  class="input-field col-md-5">
@@ -28,15 +31,15 @@
 
         <input type="number" placeholder="set zoom level" [(ngModel)]="map1.zoom" name="description">
     </div> -->
-       <input type="submit" value="Submit" class="btn">
+       <input style="background:green;color:white" type="submit" value="Submit" class="btn">
  
     </div>
     </div>
 
 </form>
 <!-- <button (click)="onSubmit()" class="btn btn-success">Add</button> -->
-<div class="content">
-    <ul  *ngFor="let o of map_notes">
+<div class="content row">
+    <ul class="col-md-4 notepatch"  *ngFor="let o of map_notes">
         <li>
            Note: {{o.title}}
         </li>
@@ -46,7 +49,7 @@
         <li>
          Zoom Level:   {{o.zoom}}
         </li>
-        <button (click)="setMap(o)" class="btn btn-info">See in Map Accordingly</button>
+        <button (click)="setMap(o)" class="btn btn-info">See in Map </button>
         <button (click)="delete(o.id)" class="btn btn-danger">Delete</button>
       
     </ul>

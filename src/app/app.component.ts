@@ -3,7 +3,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'notes';
@@ -24,7 +24,7 @@ export class AppComponent {
 
   }
   maps=false;
-  txt=false;
+  txt=true;
   article=false;
   showText(){
     console.log(this.text,"inside function")

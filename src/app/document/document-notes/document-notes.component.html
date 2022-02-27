@@ -17,15 +17,24 @@
               <!-- <label >Url instead</label>  <input type="text"  [(ngModel)]="pic.picture"  name="picture"> -->
 
             </div>
-            <input type="submit" value="Submit" class="btn">
+            <input style="background:green;color:white;width:200px;margin:20px" type="submit" value="Submit" class="btn">
 
         </div>
 
     </form>
 </div>
-<div class="content">
-    <ul *ngFor="let o of doc_note">
-        <li>{{o.title}}</li>
-        <li>{{o.type}}</li>
+<hr>
+<div class="content row ">
+    <ul class="col-md-4 notepatch" *ngFor="let o of doc_note">
+  
+        <li class="title">{{o.title}}</li>
+        <li class="btn btn-success">{{o.type}} {{type}}</li>
+        <button (click)="download_file()" class="btn btn-primary">Dowload Document</button>
+
+        <video  src="{{o.document}}" style="width: 100%;margin:3px;border-radius:11px"></video>
+        <iframe  src="{{o.document}}" style="width: 100%;margin:3px;border-radius:11px"></iframe>
+        <embed src="{{o.document}}" type="application/pdf"
+        frameBorder="0"
+        scrolling="auto" width="200px" height="200px" />
     </ul>
 </div>

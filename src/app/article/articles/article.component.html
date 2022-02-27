@@ -12,15 +12,17 @@
 
                <input type="text" placeholder="description" [(ngModel)]="note.description" name="description">
            </div>
-           <input type="submit" value="Submit" class="btn">
+           <input style="background:green;color:white;width:100px" type="submit" value="Submit" class="btn">
      
         </div>
 
     </form>
 </div>
-<div class="list">
-    <ul *ngFor="let o of notes ;let i=index">
-        <li>{{o.title}}</li>
-        <li style="color:teal; font-weight: bolder;">{{o.description}}  <button (click)="delete(o.id1)" class="btn-danger danger">Delete</button> </li>
+<hr>
+<div class="list row">
+    <ul class="col-md-4 notepatch "  *ngFor="let o of notes ;let i=index">
+        <li class="title">{{o.title}}</li>
+        <li class="desc" >{{o.description}} </li>
+        <li> <button (click)="delete(o.id1)" class="btn btn-danger">Delete</button> </li>
     </ul>
 </div>

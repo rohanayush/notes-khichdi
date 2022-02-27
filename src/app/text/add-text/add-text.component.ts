@@ -7,7 +7,7 @@ import {v4 as uuid} from 'uuid';
 @Component({
   selector: 'app-add-text',
   templateUrl: './add-text.component.html',
-  styleUrls: ['./add-text.component.scss']
+  styleUrls: ['./add-text.component.css']
 })
 export class AddTextComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import {v4 as uuid} from 'uuid';
 @Component({
   selector: 'app-map-notes',
   templateUrl: './map-notes.component.html',
-  styleUrls: ['./map-notes.component.scss']
+  styleUrls: ['./map-notes.component.css']
 })
 
 @Injectable()
@@ -37,6 +37,8 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
     var r=this.map.on('click',(e)=>{
       localStorage.setItem('coords',e.lngLat.wrap().toString())
       console.log(e.lngLat.toString())
+    document.getElementById('info').innerHTML ="Click View:" +  ' ' +JSON.stringify(e.lngLat.wrap());
+
       return e.lngLat.toString();
     })
     console.log("r",r)

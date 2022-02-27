@@ -7,7 +7,7 @@ import { v4 as uuid} from 'uuid';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss']
+  styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
 

@@ -6,6 +6,16 @@ const initiateState: Array<Articles> = [
         "id1": 'sfsdf',
         "title":"I am good",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius totam, maxime rem doloremque eum magni in, eveniet rerum ipsum et voluptatibus odit officiis porro ullam cumque, quod quia quo corrupti."
+    },
+    {
+        "id1": 'sfsdf31',
+        "title":"I am human",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius totam, maxime rem doloremque eum magni in, eveniet rerum ipsum et voluptatibus odit officiis porro ullam cumque, quod quia quo corrupti."
+    },
+    {
+        "id1": 'sfsdf3',
+        "title":"I am human and techy",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius totam, maxime rem doloremque eum magni in, eveniet rerum ipsum et voluptatibus odit officiis porro ullam cumque, quod quia quo corrupti."
     }
 ]
 // export 

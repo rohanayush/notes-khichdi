@@ -19,20 +19,20 @@
                 <input type="file"  placeholder="upload picture" accept='image/*' #file (change)="preview(file.files)" [(ngModel)]="pic.picture" name="picture">
               <!-- <label >Url instead</label>  <input type="text"  [(ngModel)]="pic.picture"  name="picture"> -->
 
-                <br><br><br><img [src]="imgURL" height="200" >{{message}}
+                <br><br><br><img style="border-radius: 11px;margin:3px" [src]="imgURL" height="200" >{{message}}
             </div>
-            <input type="submit" value="Submit" class="btn">
+            <input style="background:green;color:white" type="submit" value="Submit" class="btn">
 
         </div>
 
     </form>
 </div>
 
-<div class="content">
-   <ul *ngFor="let o of frame">
-       {{o.title}}
-       {{o.description}}
-    <img [src]="o.picture" height="200" >
+<div class="content row">
+   <ul class="col-md-4 notepatch" *ngFor="let o of frame">
+     <li class="title">  {{o.title}}</li>
+     <li style="border-left:5px solid teal;margin-left:5px">  {{o.description}}</li>
+    <img style="border-radius: 11px;margin:3px" [src]="o.picture" height="200" >
 
 
    </ul>
