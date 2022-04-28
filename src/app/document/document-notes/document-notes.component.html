@@ -5,19 +5,20 @@
             <div class="input-field col-md-6">
                 <label>Document Title</label>
 
-                <input type="text"  placeholder="Title"  [(ngModel)]="docs.title"   name="picture">
-              <!-- <label >Url instead</label>  <input type="text"  [(ngModel)]="pic.picture"  name="picture"> -->
+                <input type="text" placeholder="Title" [(ngModel)]="docs.title" name="picture">
 
             </div>
-            
+
             <div class="input-field col-md-6">
                 <label>Document upload</label>
 
-                <input type="file"  placeholder="upload picture" accept='*' #file (change)="preview(file.files)" [(ngModel)]="docs.document"   name="picture">
-              <!-- <label >Url instead</label>  <input type="text"  [(ngModel)]="pic.picture"  name="picture"> -->
+                <input type="file" placeholder="upload picture" accept='*' #file (change)="preview(file.files)"
+                    [(ngModel)]="docs.document" name="picture">
+                <!-- <label >Url instead</label>  <input type="text"  [(ngModel)]="pic.picture"  name="picture"> -->
 
             </div>
-            <input style="background:green;color:white;width:200px;margin:20px" type="submit" value="Submit" class="btn">
+            <input style="background:green;color:white;width:200px;margin:20px" type="submit" value="Submit"
+                class="btn">
 
         </div>
 
@@ -26,18 +27,12 @@
 <hr>
 <div class="content row ">
     <ul class="col-md-4 notepatch" *ngFor="let o of doc_note">
-  
+
         <li class="title">{{o.title}}</li>
         <li class="btn btn-success">{{o.type}} {{type}}</li>
-        <!-- <button (click)="download_file()" class="btn btn-primary">Dowload Document</button> -->
 
-        <!-- <video  src="{{o.document}}" style="width: 100%;margin:3px;border-radius:11px"></video>
-        <iframe  src="{{o.document}}" style="width: 100%;margin:3px;border-radius:11px"></iframe>
-        <embed src="{{o.document}}" type="application/pdf"
-        frameBorder="0"
-        scrolling="auto" width="200px" height="200px" /> -->
-        <li> <button (click)="delete(o.id)"  class="btn btn-danger">
-            Delete
-        </button></li>
+        <li> <button (click)="delete(o.id)" class="btn btn-danger">
+                Delete
+            </button></li>
     </ul>
 </div>

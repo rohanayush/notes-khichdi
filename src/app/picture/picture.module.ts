@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PicturesComponent } from './pictures/pictures.component';
 import { FormsModule } from '@angular/forms';
+import { PictureRoutingModule } from './picture-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    PictureRoutingModule
   ],
   exports:[
     PicturesComponent

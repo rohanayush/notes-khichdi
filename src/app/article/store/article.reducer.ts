@@ -27,8 +27,19 @@ export function ArticlesReducer(state: Array<Articles> = initiateState, action: 
             return [...state, action.payload]
         case ArticlesActionTypes.REMOVE_ARTICLE:
             console.log("in reducer remove ",...state,action.payload)
+        
 
             return state.filter(ARTICLE=>ARTICLE.id1 != action.payload)
+        case ArticlesActionTypes.UPDATE:
+            console.log("in reducer update ",...state,action.payload)
+            state.filter(m=>m.id1===action.payload).map(m =>{ m.description=action.desc
+                
+            m.title=action.title
+            })
+            return state 
+            
+
+
         default:
             return state
     }

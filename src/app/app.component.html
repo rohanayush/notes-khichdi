@@ -1,15 +1,22 @@
+
 <app-navbar></app-navbar>
-<div class="btnstack">
-<button class="btn btn-info" [disabled]="txt" (click)="showText()">Text note <sup class="sup"> +</sup></button>
-<button class="btn btn-info" [disabled]="article" (click)="showArticle()">Article note<sup class="sup">+</sup> </button>
+<div class="btnstack"> 
+<button class="btn btn-info"  routerLink="/articles">Go to Article</button>
+<button class="btn btn-info"  routerLink="/text" >Text note <sup class="sup"> +</sup></button>
+<button class="btn btn-info"  routerLink="/picture" >Picture note <sup class="sup"> +</sup></button>
+<button class="btn btn-info"  routerLink="/docs" >Docs note <sup class="sup"> +</sup></button>
+<button class="btn btn-info"  routerLink="/maps" >Maps note <sup class="sup"> +</sup></button>
+<!-- <button class="btn btn-info" [disabled]="article" (click)="showArticle()">Article note<sup class="sup">+</sup> </button>
 <button class="btn btn-info" [disabled]="picture" (click)="showPictureNotes()">Pictures note <sup class="sup">+</sup></button>
 <button class="btn btn-info"  [disabled]="docs" (click)="showDocumentNotes()">Document note <sup class="sup">+</sup></button>
-<button class="btn btn-info" [disabled]="maps" (click)="showMapNotes()">Map note <sup class="sup">+</sup></button>
+<button class="btn btn-info" [disabled]="maps" (click)="showMapNotes()">Map note <sup class="sup">+</sup></button> -->
 </div>
 
 <hr>
 
-<div [ngStyle]="{'display': (txt?'':'none')}"  #textShow>
+<router-outlet></router-outlet>
+
+<!-- <div [ngStyle]="{'display': (txt?'':'none')}"  #textShow>
 <app-add-text></app-add-text>
 </div>
 
@@ -27,3 +34,6 @@
       <div [ngStyle]="{'display': (maps?'':'none')}"  >
         <app-map-notes></app-map-notes>
         </div>
+<div>
+
+</div> -->

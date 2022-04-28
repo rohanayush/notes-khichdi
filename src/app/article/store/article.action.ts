@@ -6,6 +6,7 @@ export enum ArticlesActionTypes{
     ADD_ARTICLE='[Articles text]  Add Note',
     ADD_ARTICLE_SUCCESS='[Articles text]  Added Note Success',
     ADD_ARTICLE_FAIL='[Articles text]  Added Note Fail',
+    UPDATE='[Articles update] Update Note',
 
 
 
@@ -22,5 +23,10 @@ export enum ArticlesActionTypes{
 
         constructor(public payload:string){}
     }
+    export class UpdateArticle implements Action{
+        readonly type=ArticlesActionTypes.UPDATE;
+
+        constructor(public payload:string,public desc:string,public title:string){}
+    }
   
-    export type AddNoteAction= AddArticle | RemoveArticle;
+    export type AddNoteAction= AddArticle | RemoveArticle | UpdateArticle;

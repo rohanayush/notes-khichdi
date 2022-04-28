@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapNotesComponent } from './map-notes/map-notes.component';
 import { FormsModule } from '@angular/forms';
+import { MapsRoutingModule } from './maps-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MapsRoutingModule
   ],
   exports:[
     MapNotesComponent

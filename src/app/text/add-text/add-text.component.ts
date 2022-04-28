@@ -15,7 +15,12 @@ export class AddTextComponent implements OnInit {
     id:'',
     description:''
   };
-  constructor(private store:Store<Array<Notes>>) { }
+  constructor(private store:Store<Array<Notes>>) { 
+
+    console.log("this is text");
+    
+
+  }
 
   
   // notesItems$:Observable<Array<Notes>>;

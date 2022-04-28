@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleModule } from './article/article.module';
+import { ButtonModule } from './button/button.module';
 import { DocumentModule } from './document/document.module';
 import { MapModule } from './map/map.module';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -22,7 +24,8 @@ import { TextModule } from './text/text.module';
     ArticleModule,
   PictureModule,
   DocumentModule,
-  MapModule
+  MapModule,
+  ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

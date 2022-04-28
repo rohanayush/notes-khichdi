@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'notes';
   @ViewChild('textShow') text:ElementRef|any ;
-  constructor(){
+  constructor(private route:Router){
     // this.text.nativeElement.hidden=true;
 
   }
@@ -36,6 +37,9 @@ export class AppComponent {
   this.article=false;
 
     // this.text.nativeElement.hidden=false;
+  }
+  routeTo(){
+    this.route.navigateByUrl("/articles");
   }
   picture=false;
   showPictureNotes(){

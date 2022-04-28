@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, UPDATE } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Articles } from '../model/articles';
-import { AddArticle, RemoveArticle } from '../store/article.action';
+import { AddArticle, RemoveArticle ,UpdateArticle} from '../store/article.action';
 import { v4 as uuid} from 'uuid';
 @Component({
   selector: 'app-article',
@@ -18,7 +18,7 @@ export class ArticleComponent implements OnInit {
   };
   constructor(private store:Store<Array<Articles>>) { }
 
-  
+  a="Rohan"
   notesItems$:Observable<Array<Articles>>;
   d=[]
   delete(a){
@@ -33,19 +33,37 @@ export class ArticleComponent implements OnInit {
            code=Math.random()
       }
       this.d.push(code);
-    var a={
-      id1:uuid(),
-      title:this.note.title,
-      description:this.note.description
-    }
+      var a={
+        id1:uuid(),
+        title:this.note.title,
+        description:this.note.description
+      }
+    
+
+   
     //console.log("articles",a)
 
     this.store.dispatch(new AddArticle(a))
      
       this.note.description='';
       this.note.title=''
+      this.note.id1=""
     }
   }
+  edit(o){
+    this.note.description=o.description;
+  this.note.id1=o.id1;
+  this.note.title = o.title;
+     
+  }
+  update(){
+  this.store.dispatch(new UpdateArticle(this.note.id1,this.note.description,this.note.title))
+  this.note={
+    id1:"", title:"", description:""
+  }
+
+  }
+
   notes:any;
   ngOnInit(): void {
     this.notesItems$= this.store.select(store=>store);

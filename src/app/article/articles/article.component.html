@@ -4,25 +4,28 @@
         <div class="row">
             <div class="input-field col-md-3">
                 <label>title</label>
- 
                 <input type="text" placeholder="title" [(ngModel)]="note.title" name="title">
             </div>
             <div class="input-field col-md-6">
                <label>description</label>
-
-               <input type="text" placeholder="description" [(ngModel)]="note.description" name="description">
+               <input style="width:500px" type="text" placeholder="description" [(ngModel)]="note.description" name="description">
            </div>
-           <input style="background:green;color:white;width:100px" type="submit" value="Submit" class="btn">
-     
+           <input style="background:green;color:white;width:100px" type="submit" value="Submit" class="btn">         
         </div>
-
     </form>
+
+
+
 </div>
 <hr>
+
 <div class="list row">
-    <ul class="col-md-4 notepatch "  *ngFor="let o of notes ;let i=index">
+    <ul class="col-md-4 notepatch "  *ngFor="let o of notes;let i=index">
         <li class="title">{{o.title}}</li>
         <li class="desc" >{{o.description}} </li>
-        <li> <button (click)="delete(o.id1)" class="btn btn-danger">Delete</button> </li>
+        <li> <button class="btn btn-danger" (click)="delete(o.id1)" >Delete</button> </li>
+        <li> <button (click)="edit(o)" class="btn btn-secondary">Edit</button> </li>
+        <li> <button (click)="update()" class="btn btn-secondary">Update</button> </li> 
+        <!-- <li><app-button color="blue" name="rohan"></app-button></li> -->
     </ul>
 </div>

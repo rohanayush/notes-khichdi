@@ -6,6 +6,8 @@ import { StoreModule } from '@ngrx/store';
 import { ArticlesReducer } from './store/article.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { ButtonModule } from '../button/button.module';
+import { ArticleRoutingModule } from './article-routing.module';
 
 
 
@@ -15,6 +17,8 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     CommonModule,FormsModule,
+    ButtonModule,
+    ArticleRoutingModule,
     StoreModule.forRoot({
       articles:ArticlesReducer
      }),

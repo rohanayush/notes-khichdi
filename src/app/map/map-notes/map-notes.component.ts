@@ -42,7 +42,7 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
       return e.lngLat.toString();
     })
     //console.log("r",r)
-
+  
 
     // setTimeout(() => {
     //   if(localStorage.getItem('coords').length>0){
@@ -81,9 +81,11 @@ export class MapNotesComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
   setMap(o){
+    console.log("reached with ",o)
+    // this.map.flyTo(o.center,o.zoom);
     this.map.setCenter(o.center);
     this.map.setZoom(o.zoom);
-    // this.map.setCenter(o.center);
+    this.map.setCenter(o.center);
   }
   // mapp:Maps={
   //   id:"",

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DocumentNotesComponent } from './document-notes/document-notes.component';
 import { FormsModule } from '@angular/forms';
+import { DocsRoutingModule } from './doc-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    DocsRoutingModule
   ],
   exports:[
     DocumentNotesComponent
